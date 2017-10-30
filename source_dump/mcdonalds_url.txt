@@ -1,0 +1,1 @@
+http://nmd.mcd15628.slc.wayport.net/index.adp?MacAddr=00%3a1E%3a65%3a07%3a4D%3a4E&IpAddr=192%2e168%2e5%2e115&Ip6Addr=&vsgpId=&vsgId=105248&UserAgent=&ProxyHost=&TunnelIfId=411335&VlanId=20&origDest=http%3a%2f%2fwww%2ecnn%2ecom%2f
