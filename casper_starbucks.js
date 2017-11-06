@@ -1,4 +1,4 @@
-phantom.casperPath = '/bat/casper/node_modules/casperjs';
+phantom.casperPath = '/bat/casper/casper/node_modules/casperjs';
 phantom.injectJs(phantom.casperPath + '/bin/bootstrap.js');
 
 var casper = require("casper").create({
@@ -18,14 +18,20 @@ casper.start('http://starbucks.dev', function(){
 		var button = this.getElementInfo('button');
 		this.echo(button);
 		this.echo('clicking on the x y coords');
-		utils.dump(button);
 		this.echo("clicking button");
 		//this.click(button);
 		this.mouse.click(button.x,button.y);
 });
 casper.then(function step1()
 {
-	this.capture('success.png');
+	casper.wait(5000, function()
+	{
+		this.echo("waiting for 5000 ms for starbucks");
+	});
+});
+casper.then(function step2()
+{
+	this.capture('starbucks.png');
 });
 
 casper.run(); 

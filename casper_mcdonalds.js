@@ -1,4 +1,4 @@
-phantom.casperPath = '/bat/casper/node_modules/casperjs';
+phantom.casperPath = '/bat/casper/casper/node_modules/casperjs';
 phantom.injectJs(phantom.casperPath + '/bin/bootstrap.js');
 
 var casper = require("casper").create({
@@ -25,7 +25,14 @@ casper.start('http://mcdonalds.dev', function(){
 });
 casper.then(function step1()
 {
-	this.capture('success.png');
+	casper.wait(5000, function()
+	{
+		this.echo("Waiting 5000ms for mcdonalds");
+	});
+});
+casper.then(function step2()
+{
+	this.capture('mcdonalds.png');
 });
 
 casper.run(); 
